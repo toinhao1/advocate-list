@@ -9,6 +9,18 @@ import {
   bigint,
 } from "drizzle-orm/pg-core";
 
+export interface Advocate {
+  id: number;
+  firstName: string;
+  lastName: string;
+  city: string;
+  degree: string;
+  specialties: string[];
+  yearsOfExperience: number;
+  phoneNumber: number;
+  createdAt: Date;
+}
+
 const advocates = pgTable("advocates", {
   id: serial("id").primaryKey(),
   firstName: text("first_name").notNull(),
